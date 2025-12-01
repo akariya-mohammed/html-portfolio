@@ -1,60 +1,226 @@
-h2 {
-  /* Center the text, matching the h1 */
-  text-align: center; 
-  
-  /* Use a slightly smaller font size */
-  font-size: 1.5em; 
-  
-  /* Reduce the top margin a bit */
-  margin-top: -10px; 
-  
-  /* Give it a slightly lighter color than the h1 */
-  color: #555; 
-  
-  /* Add a border line underneath to separate the title area */
-  padding-bottom: 10px;
-  border-bottom: 2px solid #ccc;
-  
-  /* Add space below the subtitle */
-  margin-bottom: 30px; 
-}
-h3 {
-  /* Give the project titles some visual weight */
-  font-size: 1.8em;
-  
-  /* Align them left (or center, your choice!) */
-  text-align: left; 
-  
-  /* Add space above the project section */
-  margin-top: 40px; 
-  color: #333; 
+/* 1. GLOBAL & CORE STYLES (Applies to all screen sizes by default) */
+
+body {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #f0f0f0; 
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    min-height: 100vh;
 }
 
-/* Style the links inside the H3 */
-h3 a {
-    text-decoration: none; /* Remove the underline from links */
-    color: #007bff; /* Use your primary brand color */
+.container {
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+    background-color: transparent; 
 }
-h3 a:hover {
-    color: #0056b3; /* Darker color on hover */
-    text-decoration: underline;
+
+/* Hide the mobile sidebar by default (on large screens) */
+.mobile-sidebar {
+    display: none; 
 }
-img {
-  /* Make the image responsive (never wider than its container) */
-  max-width: 100%; 
-  
-  /* Set a consistent height for both project previews */
-  height: auto; 
-  max-height: 300px; /* Adjust this to your preference */
-  
-  /* Display as a block element so you can center it */
-  display: block; 
-  
-  /* Center the image horizontally */
-  margin: 10px auto 20px auto; 
-  
-  /* Add some styling to make the image look like a neat card */
-  border: 1px solid #ddd; 
-  border-radius: 5px; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 40px 0;
+}
+
+/* 2. TYPOGRAPHY (Hero Text) */
+
+h1 {
+    text-align: left; 
+    font-size: 5em; 
+    color: #ffffff;
+    margin-bottom: 0.1em;
+    line-height: 1.1;
+    padding-top: 50px;
+}
+
+h2 {
+    text-align: left; 
+    font-size: 2em; 
+    color: #ff6b81; /* Accent Color */
+    margin-top: 0;
+}
+
+/* 3. STATS BAR (Desktop-focused) */
+
+.stats-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c2c2c; 
+    padding: 30px 40px;
+    margin-top: 50px;
+    border-radius: 5px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.stat-number {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ff6b81; 
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    color: #ccc;
+    display: block;
+}
+
+/* 4. PROJECT SECTION */
+
+.projects-section {
+    padding-top: 20px;
+}
+
+.projects-section h2 {
+    color: #ffffff; /* Services title */
+    margin-bottom: 20px;
+}
+
+/* Project Heading Styles */
+.projects-section h3 {
+    font-size: 2em;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+/* Project Title Link Styling */
+.projects-section h3 a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.projects-section h3 a:hover {
+    color: #ff6b81;
+}
+
+/* Image Styling */
+.projects-section img {
+    width: 100%; 
+    height: auto; 
+    max-height: 500px;
+    display: block; 
+    margin: 0 auto 50px auto; 
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projects-section img:hover {
+    transform: translateY(-5px); 
+}
+
+/* Footer/Contact Links */
+.footer-links {
+    text-align: center;
+    padding-bottom: 40px;
+}
+.footer-links a {
+    color: #ff6b81;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* 5. MOBILE STYLES (Screen size < 768px) */
+
+@media (max-width: 768px) {
+    
+    /* 1. Show the Mobile Sidebar & Hide Desktop Stats */
+    .mobile-sidebar {
+        display: block; 
+        background-color: #2c2c2c;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        border-radius: 5px;
+    }
+
+    .stats-bar {
+        display: none; 
+    }
+    
+    /* 2. Adjust Typography for Mobile */
+    .container {
+        padding: 0 10px; 
+    }
+    
+    h1 {
+        font-size: 3em; 
+        padding-top: 10px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    /* 3. Sidebar Element Styling */
+    .profile-info {
+        text-align: center;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #333;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+        border: 2px solid #ff6b81;
+    }
+
+    .details-section p {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0;
+        font-size: 0.9em;
+    }
+    
+    /* Skills Bar Styling */
+    .skill-bar {
+        background-color: #3e3e3e;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        height: 15px;
+    }
+    .skill-bar div {
+        background-color: #ff6b81; 
+        color: #fff;
+        font-size: 0.7em;
+        text-align: right;
+        padding-right: 5px;
+        line-height: 15px;
+        border-radius: 5px;
+    }
+    .social-links {
+        padding-top: 15px;
+        border-top: 1px solid #333;
+        text-align: center;
+    }
+    .social-links a {
+        color: #ff6b81;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+    
+    /* Adjust Project Images for Mobile */
+    .projects-section img {
+        max-height: 300px; 
+    }
 }
