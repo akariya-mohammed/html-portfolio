@@ -311,3 +311,91 @@ h2 {
         max-height: 300px; 
     }
 }
+/* 8. CONTACT PAGE SPECIFIC STYLES */
+
+/* Center and structure the contact content */
+.contact-content {
+    max-width: 600px; /* Make the contact area narrower for focus */
+    margin: 40px auto; 
+    padding: 20px;
+}
+
+.contact-content h1 {
+    color: #ffffff;
+    font-size: 3em;
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 40px;
+}
+
+.intro-text {
+    font-size: 1.1em;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-details p {
+    font-size: 1.1em;
+    color: #f0f0f0;
+    margin: 5px 0;
+}
+
+.contact-details a {
+    color: #ff6b81;
+    text-decoration: none;
+}
+
+.form-heading {
+    text-align: center;
+    color: #ff6b81;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+}
+
+/* Style the form elements */
+form {
+    display: grid;
+    gap: 20px; /* Space between form fields */
+}
+
+/* Style for input fields and textareas */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #444; /* Dark border */
+    background-color: #1e1e1e; /* Darker input background */
+    color: #f0f0f0; /* Light text color */
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Style for the submit button */
+.submit-button {
+    background-color: #ff6b81; /* Accent color */
+    color: #1a1a1a;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #ff8fa0;
+}
