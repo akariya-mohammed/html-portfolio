@@ -18,3 +18,43 @@ h2 {
   /* Add space below the subtitle */
   margin-bottom: 30px; 
 }
+h3 {
+  /* Give the project titles some visual weight */
+  font-size: 1.8em;
+  
+  /* Align them left (or center, your choice!) */
+  text-align: left; 
+  
+  /* Add space above the project section */
+  margin-top: 40px; 
+  color: #333; 
+}
+
+/* Style the links inside the H3 */
+h3 a {
+    text-decoration: none; /* Remove the underline from links */
+    color: #007bff; /* Use your primary brand color */
+}
+h3 a:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: underline;
+}
+img {
+  /* Make the image responsive (never wider than its container) */
+  max-width: 100%; 
+  
+  /* Set a consistent height for both project previews */
+  height: auto; 
+  max-height: 300px; /* Adjust this to your preference */
+  
+  /* Display as a block element so you can center it */
+  display: block; 
+  
+  /* Center the image horizontally */
+  margin: 10px auto 20px auto; 
+  
+  /* Add some styling to make the image look like a neat card */
+  border: 1px solid #ddd; 
+  border-radius: 5px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
