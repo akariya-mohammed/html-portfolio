@@ -1,1 +1,20 @@
-
+h2 {
+  /* Center the text, matching the h1 */
+  text-align: center; 
+  
+  /* Use a slightly smaller font size */
+  font-size: 1.5em; 
+  
+  /* Reduce the top margin a bit */
+  margin-top: -10px; 
+  
+  /* Give it a slightly lighter color than the h1 */
+  color: #555; 
+  
+  /* Add a border line underneath to separate the title area */
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ccc;
+  
+  /* Add space below the subtitle */
+  margin-bottom: 30px; 
+}
