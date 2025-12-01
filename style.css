@@ -74,14 +74,71 @@ h2 {
     display: block;
 }
 
-/* 4. PROJECT SECTION */
+/* 4. SERVICES/SKILLS CARD SECTION */
+
+.services-section {
+    padding-top: 40px;
+}
+
+.services-section h2 {
+    color: #ffffff;
+    font-size: 2em;
+    margin-bottom: 25px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.service-card h3 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: #ccc;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.skill-level {
+    display: inline-block;
+    background-color: #ff6b81;
+    color: #1a1a1a;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+}
+
+/* 5. PROJECT SECTION */
 
 .projects-section {
     padding-top: 20px;
 }
 
 .projects-section h2 {
-    color: #ffffff; /* Services title */
+    color: #ffffff; 
     margin-bottom: 20px;
 }
 
@@ -138,7 +195,25 @@ h2 {
     color: #ffffff;
 }
 
-/* 5. MOBILE STYLES (Screen size < 768px) */
+/* Style for the Download CV link (Button style) */
+.cv-link {
+    background-color: #ff6b81 !important;
+    color: #1a1a1a !important; 
+    padding: 10px 20px !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    font-size: 1em !important;
+    transition: background-color 0.3s !important;
+    margin-left: 20px !important; 
+}
+
+.cv-link:hover {
+    background-color: #ff8fa0 !important;
+    color: #1a1a1a !important;
+}
+
+/* 6. MOBILE STYLES (Screen size < 768px) */
 
 @media (max-width: 768px) {
     
@@ -156,6 +231,11 @@ h2 {
         display: none; 
     }
     
+    /* Services grid stack vertically on mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
     /* 2. Adjust Typography for Mobile */
     .container {
         padding: 0 10px; 
@@ -192,22 +272,29 @@ h2 {
         font-size: 0.9em;
     }
     
-    /* Skills Bar Styling */
-    .skill-bar {
-        background-color: #3e3e3e;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        height: 15px;
+    /* Language Section Styles (Corrected Placement) */
+    .languages-section {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+        margin-bottom: 15px;
     }
-    .skill-bar div {
-        background-color: #ff6b81; 
-        color: #fff;
-        font-size: 0.7em;
-        text-align: right;
-        padding-right: 5px;
-        line-height: 15px;
-        border-radius: 5px;
+    .languages-section p {
+        font-weight: bold;
+        margin-bottom: 5px;
     }
+    .languages-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .languages-section li {
+        padding: 3px 0;
+        color: #ccc;
+    }
+
+    /* Social Links Styling */
     .social-links {
         padding-top: 15px;
         border-top: 1px solid #333;
