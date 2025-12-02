@@ -397,6 +397,25 @@ h2 {
         font-size: 4em;
     }
 }
+
+/* --- SCROLL REVEAL STYLES (Added for paragraph animation) --- */
+
+/* 1. Default State (Hidden and Offset) */
+.about-text-content p, 
+.about-text-content .tagline {
+    opacity: 0;
+    transform: translateY(50px); /* Moves text down 50px */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform; /* Improves animation performance */
+}
+
+/* 2. Visible State (Activated by JavaScript) */
+.about-text-content p.is-visible,
+.about-text-content .tagline.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* Slides text back to original position */
+}
+
 /* 8. CONTACT PAGE STYLES */
 
 /* Center and structure the contact content */
