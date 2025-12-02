@@ -62,17 +62,10 @@ h2 {
 
 .hero-background-img {
     width: 100%;
-    
-    /* ADJUSTED: Increased height to 350px */
     height: 350px; 
-    
     display: block;
-    
-    /* Centers image on your face within the 350px banner space */
     object-fit: cover;
     object-position: 50% 10%; 
-    
-    /* IMPLEMENTED: Custom wavy bottom edge using CSS clip-path */
     clip-path: polygon(
         0% 0%, 
         100% 0%, 
@@ -88,41 +81,71 @@ h2 {
 
 .hero-text-content-overlay {
     position: absolute; 
-    top: 55%; 
-    left: 10%; 
+    top: 50%; /* Adjusted: Moved the entire overlay container slightly higher */
+    left: 0; /* Changed: Start from the very left edge */
     transform: translateY(-50%); 
-    width: 80%; 
-    max-width: 900px; /* Increased max-width for h2 positioning */
-    text-align: left; 
+    width: 100%; /* Changed: Take full width to distribute h1 and h2 */
+    max-width: none; /* Changed: Remove max-width to allow full horizontal spread */
+    height: 100%; /* Changed: Take full height of the parent for vertical positioning */
+    text-align: left; /* Default alignment */
     z-index: 10; 
     color: #ffffff; 
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+    display: flex; /* New: Use flexbox for easy horizontal distribution */
+    justify-content: space-between; /* New: Push content to ends */
+    align-items: center; /* New: Center vertically within the overlay */
+    padding: 0 5%; /* Add some padding on the sides */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .hero-text-content-overlay h1 {
     /* Styles and positions H1 (Mohammad's Portfolio) to the left */
-    display: inline-block; 
     font-size: 4.5em; 
     margin: 0; 
     padding: 0;
     text-align: left; 
     line-height: 1.1;
     color: #ffffff;
+    /* Removed: display: inline-block, position: absolute, width properties */
 }
 
 .hero-text-content-overlay h2 {
     /* Styles and positions H2 (Computer Science Student) to the right */
-    display: inline-block; 
     font-size: 2.2em; 
-    margin-top: 5px; 
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
     color: #ff6b81; 
-    text-align: right; 
-    width: 40%; 
-    position: absolute; 
-    right: 5%; 
-    top: 60%; 
+    text-align: right; /* Aligns within its own space in flexbox */
+    /* Removed: width, position, right, top properties as flexbox handles it */
 }
 
+/* --- MOBILE STYLES (Screen size < 768px) --- */
+@media (max-width: 768px) {
+    /* ... (keep other mobile styles as they are) ... */
+
+    .hero-text-content-overlay {
+        top: 60%; /* Revert to a slightly lower position for better mobile visibility */
+        left: 50%;
+        width: 90%;
+        transform: translate(-50%, -50%); 
+        text-align: center; 
+        flex-direction: column; /* Stack h1 and h2 vertically on mobile */
+        justify-content: center;
+        align-items: center;
+        padding: 0; /* Remove side padding for mobile */
+    }
+
+    .hero-text-content-overlay h1 {
+        font-size: 2.5em; 
+        text-align: center;
+        margin-bottom: 5px; /* Add a small gap between h1 and h2 on mobile */
+    }
+
+    .hero-text-content-overlay h2 {
+        font-size: 1.4em; 
+        text-align: center;
+    }
+}
 /* 3. STATS BAR LAYOUT (FLEXBOX) */
 
 .stats-bar {
