@@ -15,7 +15,7 @@ body {
     background-color: transparent; 
 }
 
-/* Hide mobile menu on desktop */
+/* Hides mobile menu on desktop by default */
 .mobile-sidebar {
     display: none; 
 }
@@ -44,7 +44,7 @@ h2 {
     margin-top: 0;
 }
 
-/* --- NEW HERO SECTION: IMAGE OVERLAY DESIGN --- */
+/* --- HERO SECTION: IMAGE OVERLAY DESIGN --- */
 
 .hero-section {
     position: relative; 
@@ -62,10 +62,12 @@ h2 {
 
 .hero-background-img {
     width: 100%;
-    height: 350px; 
+    height: 350px; /* Sets banner height, adjusted for face visibility */
     display: block;
     object-fit: cover;
-    object-position: 50% 10%; 
+    object-position: 50% 10%; /* Focuses image slightly higher */
+    
+    /* Custom wavy bottom edge using CSS clip-path */
     clip-path: polygon(
         0% 0%, 
         100% 0%, 
@@ -81,71 +83,50 @@ h2 {
 
 .hero-text-content-overlay {
     position: absolute; 
-    top: 50%; /* Adjusted: Moved the entire overlay container slightly higher */
-    left: 0; /* Changed: Start from the very left edge */
+    top: 50%; /* Vertically centers the text block */
+    left: 0; 
     transform: translateY(-50%); 
-    width: 100%; /* Changed: Take full width to distribute h1 and h2 */
-    max-width: none; /* Changed: Remove max-width to allow full horizontal spread */
-    height: 100%; /* Changed: Take full height of the parent for vertical positioning */
-    text-align: left; /* Default alignment */
+    width: 100%; 
+    max-width: none; 
+    height: 100%; 
+    text-align: left; 
     z-index: 10; 
     color: #ffffff; 
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
-    display: flex; /* New: Use flexbox for easy horizontal distribution */
-    justify-content: space-between; /* New: Push content to ends */
-    align-items: center; /* New: Center vertically within the overlay */
-    padding: 0 5%; /* Add some padding on the sides */
-    box-sizing: border-box; /* Include padding in width calculation */
+    
+    /* Flexbox setup for horizontal text distribution */
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 5%; 
+    box-sizing: border-box; 
 }
 
 .hero-text-content-overlay h1 {
-    /* Styles and positions H1 (Mohammad's Portfolio) to the left */
+    /* Styles for left-aligned primary title */
     font-size: 4.5em; 
     margin: 0; 
     padding: 0;
     text-align: left; 
     line-height: 1.1;
     color: #ffffff;
-    /* Removed: display: inline-block, position: absolute, width properties */
 }
 
 .hero-text-content-overlay h2 {
-    /* Styles and positions H2 (Computer Science Student) to the right */
+    /* Styles for right-aligned secondary title (accent color) */
     font-size: 2.2em; 
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
+    margin: 0; 
+    padding: 0; 
     color: #ff6b81; 
-    text-align: right; /* Aligns within its own space in flexbox */
-    /* Removed: width, position, right, top properties as flexbox handles it */
+    text-align: right; 
+    
+    /* Absolute positioning for precise right-side alignment */
+    width: 40%; 
+    position: absolute; 
+    right: 5%; 
+    top: 60%; 
 }
 
-/* --- MOBILE STYLES (Screen size < 768px) --- */
-@media (max-width: 768px) {
-    /* ... (keep other mobile styles as they are) ... */
-
-    .hero-text-content-overlay {
-        top: 60%; /* Revert to a slightly lower position for better mobile visibility */
-        left: 50%;
-        width: 90%;
-        transform: translate(-50%, -50%); 
-        text-align: center; 
-        flex-direction: column; /* Stack h1 and h2 vertically on mobile */
-        justify-content: center;
-        align-items: center;
-        padding: 0; /* Remove side padding for mobile */
-    }
-
-    .hero-text-content-overlay h1 {
-        font-size: 2.5em; 
-        text-align: center;
-        margin-bottom: 5px; /* Add a small gap between h1 and h2 on mobile */
-    }
-
-    .hero-text-content-overlay h2 {
-        font-size: 1.4em; 
-        text-align: center;
-    }
-}
 /* 3. STATS BAR LAYOUT (FLEXBOX) */
 
 .stats-bar {
@@ -350,6 +331,10 @@ h2 {
         width: 90%;
         transform: translate(-50%, -50%); 
         text-align: center; 
+        flex-direction: column; /* Stacks text vertically */
+        justify-content: center;
+        align-items: center;
+        padding: 0;
     }
 
     .hero-text-content-overlay h1 {
