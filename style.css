@@ -1,7 +1,7 @@
-/* 1. GLOBAL & CORE STYLES (Applies to all screen sizes by default) */
+/* 1. GLOBAL & BASE STYLES */
 
 body {
-    background-color: #1a1a1a; /* Dark background color */
+    background-color: #1a1a1a;
     color: #f0f0f0; 
     font-family: 'Arial', sans-serif; 
     margin: 0;
@@ -15,7 +15,7 @@ body {
     background-color: transparent; 
 }
 
-/* Hide the mobile sidebar by default (on large screens) */
+/* Hide mobile menu on desktop */
 .mobile-sidebar {
     display: none; 
 }
@@ -26,7 +26,7 @@ hr {
     margin: 40px 0;
 }
 
-/* 2. TYPOGRAPHY (Hero Text) */
+/* 2. MAIN TYPOGRAPHY */
 
 h1 {
     text-align: left; 
@@ -40,11 +40,11 @@ h1 {
 h2 {
     text-align: left; 
     font-size: 2em; 
-    color: #ff6b81; /* Accent Color */
+    color: #ff6b81;
     margin-top: 0;
 }
 
-/* 3. STATS BAR (Desktop-focused) */
+/* 3. STATS BAR LAYOUT (FLEXBOX) */
 
 .stats-bar {
     display: flex;
@@ -74,7 +74,7 @@ h2 {
     display: block;
 }
 
-/* 4. SERVICES/SKILLS CARD SECTION */
+/* 4. SERVICES/SKILLS GRID */
 
 .services-section {
     padding-top: 40px;
@@ -131,14 +131,14 @@ h2 {
     font-size: 0.8em;
 }
 
-/* 5. PROJECT SECTION */
+/* 5. PROJECT SECTION LAYOUT */
 
 .projects-section {
     padding-top: 20px;
 }
 
 .projects-section h2 {
-    color: #ffffff; 
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
@@ -195,7 +195,7 @@ h2 {
     color: #ffffff;
 }
 
-/* Style for the Download CV link (Button style) */
+/* CV Button Styling */
 .cv-link {
     background-color: #ff6b81 !important;
     color: #1a1a1a !important; 
@@ -217,7 +217,7 @@ h2 {
 
 @media (max-width: 768px) {
     
-    /* 1. Show the Mobile Sidebar & Hide Desktop Stats */
+    /* Show mobile menu & hide desktop stats */
     .mobile-sidebar {
         display: block; 
         background-color: #2c2c2c;
@@ -231,12 +231,12 @@ h2 {
         display: none; 
     }
     
-    /* Services grid stack vertically on mobile */
+    /* Services grid stacks vertically on small screens */
     .services-grid {
         grid-template-columns: 1fr;
     }
 
-    /* 2. Adjust Typography for Mobile */
+    /* Adjust Typography for Mobile */
     .container {
         padding: 0 10px; 
     }
@@ -250,7 +250,7 @@ h2 {
         font-size: 1.5em;
     }
     
-    /* 3. Sidebar Element Styling */
+    /* Sidebar Profile Styling */
     .profile-info {
         text-align: center;
         padding-bottom: 15px;
@@ -272,7 +272,7 @@ h2 {
         font-size: 0.9em;
     }
     
-    /* Language Section Styles (Corrected Placement) */
+    /* Language Section Styles */
     .languages-section {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -312,41 +312,43 @@ h2 {
     }
 }
 
-/* ==================================== */
-/* 7. ABOUT PAGE SPECIFIC STYLES (UPDATED FOR IMAGE SPLIT AND NEW POSITION) */
-/* ==================================== */
+/* 7. ABOUT PAGE STYLES */
 
 /* Enable Flexbox on the container to split columns */
 .about-flex {
     display: flex;
-    gap: 40px; /* Space between photo and text */
-    align-items: flex-start; /* Align content to the top */
+    gap: 40px; 
+    align-items: flex-start; 
     margin-top: 40px;
 }
 
-/* Photo Column Styling (now on the left) */
+/* Photo Column Styling (Right Side) */
 .about-photo-container {
-    flex: 0 0 40%; /* Take 40% of the available width */
+    flex: 0 0 40%; 
     max-width: 400px;
     padding-top: 10px;
-    /* No 'order' needed here, as it's first in HTML for desktop */
+    
+    /* Puts the photo on the right of the text */
+    order: 2; 
 }
-
 .profile-main-img {
     width: 100%;
     height: auto;
-    border-radius: 8px; /* Consider if you want rounded for transparent PNG */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
-    object-fit: contain; /* Use 'contain' for PNG with transparent background */
-    background-color: transparent; /* Ensure no background for transparent PNG */
+    border-radius: 8px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    object-fit: contain; 
+    background-color: transparent; 
 }
 
-/* Text Column Styling */
+/* Text Column Styling (Left Side) */
 .about-text-content {
-    flex-grow: 1; /* Take the remaining width */
+    flex-grow: 1; 
+    
+    /* Puts the text on the left of the photo */
+    order: 1; 
 }
 
-/* General text styles are inherited, but ensure the tagline is visually dominant */
+/* Tagline Style */
 .about-text-content .tagline {
     font-size: 1.8em; 
     color: #f0f0f0; 
@@ -356,31 +358,50 @@ h2 {
     margin-bottom: 40px;
 }
 
-/* --- Mobile Responsiveness for Image --- */
+/* H1 Styling for About Page */
+.about-content h1 {
+    font-size: 6em; 
+    font-weight: 900; 
+    letter-spacing: -2px; 
+    margin-bottom: 5px;
+    position: relative;
+    text-align: center;
+}
+
+/* Accent Line below H1 */
+.about-content h1::after {
+    content: "";
+    display: block;
+    width: 200px; 
+    height: 4px;
+    background-color: #ff6b81; 
+    margin: 10px auto 30px; 
+}
+
+/* Mobile Responsiveness for About Page Image */
 @media (max-width: 900px) {
     .about-flex {
-        flex-direction: column; /* Stack the image above the text on smaller screens */
+        flex-direction: column;
         gap: 25px;
     }
     .about-photo-container {
         flex: 1;
-        max-width: 100%; /* Image takes full width */
-        order: -1; /* This will place the photo *above* the text on mobile */
+        max-width: 100%;
+        order: -1; 
         text-align: center;
     }
     .profile-main-img {
-        max-width: 80%; /* Limit size of the image on mobile */
-        border-radius: 8px; /* Consistent border-radius */
+        max-width: 80%;
     }
     .about-content h1 {
         font-size: 4em;
     }
 }
-/* 8. CONTACT PAGE SPECIFIC STYLES */
+/* 8. CONTACT PAGE STYLES */
 
 /* Center and structure the contact content */
 .contact-content {
-    max-width: 600px; /* Make the contact area narrower for focus */
+    max-width: 600px;
     margin: 40px auto; 
     padding: 20px;
 }
@@ -423,10 +444,10 @@ h2 {
     margin-bottom: 25px;
 }
 
-/* Style the form elements */
+/* Form layout (grid system) */
 form {
     display: grid;
-    gap: 20px; /* Space between form fields */
+    gap: 20px;
 }
 
 /* Style for input fields and textareas */
@@ -435,9 +456,9 @@ input[type="email"],
 textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid #444; /* Dark border */
-    background-color: #1e1e1e; /* Darker input background */
-    color: #f0f0f0; /* Light text color */
+    border: 1px solid #444; 
+    background-color: #1e1e1e; 
+    color: #f0f0f0; 
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 1em;
@@ -450,7 +471,7 @@ textarea {
 
 /* Style for the submit button */
 .submit-button {
-    background-color: #ff6b81; /* Accent color */
+    background-color: #ff6b81; 
     color: #1a1a1a;
     padding: 15px 25px;
     border: none;
