@@ -62,10 +62,13 @@ h2 {
 
 .hero-background-img {
     width: 100%;
-    height: 350px; /* Adjusted height to show face */
+    
+    /* ADJUSTED: Increased height to 350px */
+    height: 350px; 
+    
     display: block;
     
-    /* Ensures image fills the area and centers on the face */
+    /* Centers image on your face within the 350px banner space */
     object-fit: cover;
     object-position: 50% 10%; 
     
@@ -89,7 +92,7 @@ h2 {
     left: 10%; 
     transform: translateY(-50%); 
     width: 80%; 
-    max-width: 600px; 
+    max-width: 900px; /* Increased max-width for h2 positioning */
     text-align: left; 
     z-index: 10; 
     color: #ffffff; 
@@ -97,18 +100,27 @@ h2 {
 }
 
 .hero-text-content-overlay h1 {
+    /* Styles and positions H1 (Mohammad's Portfolio) to the left */
+    display: inline-block; 
     font-size: 4.5em; 
     margin: 0; 
     padding: 0;
     text-align: left; 
     line-height: 1.1;
+    color: #ffffff;
 }
 
 .hero-text-content-overlay h2 {
+    /* Styles and positions H2 (Computer Science Student) to the right */
+    display: inline-block; 
     font-size: 2.2em; 
     margin-top: 5px; 
     color: #ff6b81; 
-    text-align: left; 
+    text-align: right; 
+    width: 40%; 
+    position: absolute; 
+    right: 5%; 
+    top: 60%; 
 }
 
 /* 3. STATS BAR LAYOUT (FLEXBOX) */
