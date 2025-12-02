@@ -312,7 +312,9 @@ h2 {
     }
 }
 
-/* 7. ABOUT PAGE SPECIFIC STYLES (UPDATED FOR IMAGE SPLIT) */
+/* ==================================== */
+/* 7. ABOUT PAGE SPECIFIC STYLES (UPDATED FOR IMAGE SPLIT AND NEW POSITION) */
+/* ==================================== */
 
 /* Enable Flexbox on the container to split columns */
 .about-flex {
@@ -322,19 +324,21 @@ h2 {
     margin-top: 40px;
 }
 
-/* Photo Column Styling */
+/* Photo Column Styling (now on the left) */
 .about-photo-container {
     flex: 0 0 40%; /* Take 40% of the available width */
     max-width: 400px;
     padding-top: 10px;
+    /* No 'order' needed here, as it's first in HTML for desktop */
 }
 
 .profile-main-img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 8px; /* Consider if you want rounded for transparent PNG */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Darker shadow for depth */
-    object-fit: cover;
+    object-fit: contain; /* Use 'contain' for PNG with transparent background */
+    background-color: transparent; /* Ensure no background for transparent PNG */
 }
 
 /* Text Column Styling */
@@ -344,7 +348,6 @@ h2 {
 
 /* General text styles are inherited, but ensure the tagline is visually dominant */
 .about-text-content .tagline {
-    /* Large font for the hook */
     font-size: 1.8em; 
     color: #f0f0f0; 
     font-weight: 500;
@@ -362,11 +365,12 @@ h2 {
     .about-photo-container {
         flex: 1;
         max-width: 100%; /* Image takes full width */
-        order: -1; /* Place the photo above the text */
+        order: -1; /* This will place the photo *above* the text on mobile */
         text-align: center;
     }
     .profile-main-img {
         max-width: 80%; /* Limit size of the image on mobile */
+        border-radius: 8px; /* Consistent border-radius */
     }
     .about-content h1 {
         font-size: 4em;
