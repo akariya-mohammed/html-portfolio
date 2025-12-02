@@ -44,6 +44,57 @@ h2 {
     margin-top: 0;
 }
 
+/* --- NEW HERO SECTION: IMAGE OVERLAY DESIGN --- */
+
+.hero-section {
+    position: relative; 
+    width: 100%;
+    overflow: hidden; 
+}
+
+.hero-image-overlay {
+    position: relative; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-background-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.hero-text-content-overlay {
+    position: absolute;
+    top: 55%; 
+    left: 10%; 
+    transform: translateY(-50%); 
+    width: 80%; 
+    max-width: 600px; 
+    text-align: left; 
+    z-index: 10; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); 
+}
+
+.hero-text-content-overlay h1 {
+    font-size: 4.5em; 
+    margin: 0; 
+    padding: 0;
+    text-align: left; 
+    line-height: 1.1;
+}
+
+.hero-text-content-overlay h2 {
+    font-size: 2.2em; 
+    margin-top: 5px; 
+    color: #ff6b81; 
+    text-align: left; 
+}
+
 /* 3. STATS BAR LAYOUT (FLEXBOX) */
 
 .stats-bar {
@@ -241,6 +292,25 @@ h2 {
         padding: 0 10px; 
     }
     
+    /* Mobile Hero Text Adjustments */
+    .hero-text-content-overlay {
+        top: 60%; 
+        left: 50%;
+        width: 90%;
+        transform: translate(-50%, -50%); /* Centering horizontally and vertically */
+        text-align: center; 
+    }
+
+    .hero-text-content-overlay h1 {
+        font-size: 2.5em; 
+        text-align: center;
+    }
+
+    .hero-text-content-overlay h2 {
+        font-size: 1.4em; 
+        text-align: center;
+    }
+    
     h1 {
         font-size: 3em; 
         padding-top: 10px;
@@ -404,16 +474,16 @@ h2 {
 .about-text-content p, 
 .about-text-content .tagline {
     opacity: 0;
-    transform: translateY(50px); /* Moves text down 50px */
+    transform: translateY(50px); 
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    will-change: opacity, transform; /* Improves animation performance */
+    will-change: opacity, transform; 
 }
 
 /* 2. Visible State (Activated by JavaScript) */
 .about-text-content p.is-visible,
 .about-text-content .tagline.is-visible {
     opacity: 1;
-    transform: translateY(0); /* Slides text back to original position */
+    transform: translateY(0); 
 }
 
 /* 8. CONTACT PAGE STYLES */
