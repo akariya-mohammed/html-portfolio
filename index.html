@@ -172,8 +172,8 @@
             </section>
 
             <section id="projects" class="slide p-8 overflow-y-auto hide-scrollbar relative">
-                <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style="background-image: url('slide4-background.jpg'); filter: brightness(0.25); height: 100%;"></div>
-                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/70 to-slate-900/70 z-0" style="height: 100%;"></div>
+                <div id="projects-bg-image" class="fixed inset-0 bg-cover bg-center bg-no-repeat z-0" style="background-image: url('slide4-background.jpg'); filter: brightness(0.25); display: none;"></div>
+                <div id="projects-bg-overlay" class="fixed inset-0 bg-gradient-to-br from-blue-900/70 to-slate-900/70 z-0" style="display: none;"></div>
 
                 <div class="max-w-5xl w-full pt-16 pb-16 relative z-20">
                     <h2 class="text-2xl md:text-3xl font-bold text-white mb-4 text-center drop-shadow-lg">Projects</h2>
@@ -511,6 +511,7 @@
             });
             renderNavDots();
             handleSkillBarAnimation();
+            handleProjectsBackground();
         }
 
         // Update slide index when scrolling
@@ -522,6 +523,21 @@
                 currentSlideIndex = newIndex;
                 renderNavDots();
                 handleSkillBarAnimation();
+                handleProjectsBackground();
+            }
+        }
+
+        // Show/hide Projects slide background
+        function handleProjectsBackground() {
+            const projectsBgImage = document.getElementById('projects-bg-image');
+            const projectsBgOverlay = document.getElementById('projects-bg-overlay');
+
+            if (slidesData[currentSlideIndex].id === 'projects') {
+                projectsBgImage.style.display = 'block';
+                projectsBgOverlay.style.display = 'block';
+            } else {
+                projectsBgImage.style.display = 'none';
+                projectsBgOverlay.style.display = 'none';
             }
         }
 
