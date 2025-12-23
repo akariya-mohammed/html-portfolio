@@ -532,6 +532,14 @@
             renderNavDots();
             handleSkillBarAnimation();
             handleProjectsBackground();
+
+            // Reset projects section scroll to top when navigating to it
+            if (slidesData[index].id === 'projects') {
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                    projectsSection.scrollTop = 0;
+                }
+            }
         }
 
         // Update slide index when scrolling
